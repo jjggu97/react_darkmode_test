@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  transition: background-color 0.5s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.light {
+  background-color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark {
+  background-color: #121212;
+  color: #ffffff; /* 다크 모드에서 텍스트 색상 변경 */
+}
+
+.toggle-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toggle-button::before {
+  content: '';
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 24px;
+}
+
+.light .toggle-button::before {
+  content: '🌞'; 
+}
+
+.dark .toggle-button::before {
+  content: '🌜';
 }
